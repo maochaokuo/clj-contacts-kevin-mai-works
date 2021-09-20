@@ -53,3 +53,7 @@
   (stop-server)
   (-main))
 
+(comment
+  (-main)
+  (restart-server)
+  )

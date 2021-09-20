@@ -3,13 +3,18 @@
 
 (defn get-contacts
   [_]
+  (println "in get-contacts")
   {:status 200
    :body (db/get-contacts db/config)})
 
 (defn create-contact
   [{:keys [parameters]}]
   (let [data (:body parameters)
-        created-id (db/insert-contact db/config data)]
+        created-id (db/insert-contact db/config data)
+        ret (println data)
+        ]
+    (println "in create-contact")
+    (println parameters)
     {:status 201
      :body (db/get-contact-by-id db/config created-id)}))
 
