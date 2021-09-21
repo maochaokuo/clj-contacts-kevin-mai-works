@@ -10,27 +10,29 @@
             [helix.hooks :as hooks]
             ["react-dom" :as dom]))
 
-(defnc app []
-  (let [[state actions] (use-app-state)]
-    (hooks/use-effect
-      :once
-      (GET (str api-host "/contacts")
-           {:handler (:init actions)}))
-    (if (:contacts state)
-      (<>
-        ($ nav)
-        (d/div {:class '[container pt-4]}
-               ($ contact-list)
-               ($ contact-form)))
-      (d/p "Loading..."))))
+;(defnc app []
+;  (let [[state actions] (use-app-state)]
+;    (hooks/use-effect
+;      :once
+;      (GET (str api-host "/contacts")
+;           {:handler (:init actions)}))
+;    (if (:contacts state)
+;      (<>
+;        ($ nav)
+;        (d/div {:class '[container pt-4]}
+;               ($ contact-list)
+;               ($ contact-form)))
+;      (d/p "Loading..."))))
+;
+;(defnc provided-app []
+;  (provider {:context app-state
+;             :value (hooks/use-reducer app-reducer initial-state)}
+;            ($ app)))
+;
+;(defn ^:export ^:dev/after-load init []
+;  (dom/render
+;    ($ provided-app)
+;    (js/document.getElementById "app")))
 
-(defnc provided-app []
-  (provider {:context app-state
-             :value (hooks/use-reducer app-reducer initial-state)}
-            ($ app)))
-
-(defn ^:export ^:dev/after-load init []
-  (dom/render
-    ($ provided-app)
-    (js/document.getElementById "app")))
-
+(defn ^:export init []
+      (println "Hello world"))

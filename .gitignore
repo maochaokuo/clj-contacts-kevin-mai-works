@@ -29,3 +29,6 @@ resources/public/css
 .calva
 /.idea
 /.clj-kondo
+/package-lock.json
+/*.lock
+/*.lock
