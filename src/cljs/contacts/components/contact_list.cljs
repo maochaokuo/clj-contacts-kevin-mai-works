@@ -17,7 +17,7 @@
                   (d/span {:class '[pl-2]}
                           (str (:first_name contact) " " (:last_name contact))))
                  (d/div
-                  (d/button {:class '[bg-teal-500 py-1 px-4 rounded text-white focus:bg-teal-300]
+                  (d/button {:class '[bg-green-500 py-1 px-4 rounded text-white focus:bg-green-300]
                              :on-click #(set-selected contact)}
                             "Select")
                   (d/button {:class '[bg-red-500 py-1 px-4 ml-2 rounded text-white focus focus:bg-red-300]

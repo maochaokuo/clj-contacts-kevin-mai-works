@@ -70,7 +70,7 @@
                                                              -value)))}))
              contact-form-fields)
             (d/button {:type "submit"
-                       :class '[bg-teal-500 py-2 px-4 w-full text-white]}
+                       :class '[bg-green-500 py-2 px-4 w-full text-white]}
                       "Submit"))))
 
 (defnc contact-form []
@@ -85,11 +85,11 @@
        (set-edit false)))
     (d/div
      (d/div {:class '[mb-2 flex justify-between]}
-            (d/button {:class '[bg-teal-500 py-1 px-4 rounded text-white]
+            (d/button {:class '[bg-blue-500 py-1 px-4 rounded text-white]
                        :on-click #(new-contact)}
                       "New contact")
             (when selected
-              (d/button {:class '[bg-teal-500 py-1 px-4 rounded text-white]
+              (d/button {:class '[bg-blue-500 py-1 px-4 rounded text-white]
                          :on-click #(set-edit (not edit))}
                         (if edit
                           "Cancel"
